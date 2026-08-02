@@ -1,0 +1,31 @@
+MURPHY SKINNER — HISTORICAL FOOTBALL PROFILE SUBMISSION
+
+Player: Murphy Skinner
+School: Patterson High School, Patterson, Louisiana
+Graduation class: 2005
+Varsity seasons: 2002–2004
+Jersey: No. 26
+Positions: Wide receiver / defensive back
+Head coach: Tommy Minton
+
+VERIFIED / DOCUMENTED STATISTICS
+2002 sophomore (verified final): 32 receptions, 595 yards, 5 touchdowns
+2003 junior (recovered-box-score minimum): 10 receptions, 175 yards, 1 touchdown
+2004 senior (latest located cumulative total through Nov. 4): 35 receptions, 651 yards, 9 touchdowns
+Documented career minimum: 77 receptions, 1,421 yards, 15 touchdowns
+
+HONORS
+- Three-time First-Team All-District selection (2002, 2003, 2004)
+- Three-time First-Team All-St. Mary Parish selection (2002, 2003, 2004)
+- Second-Team Big School All-Acadiana wide receiver (2002)
+- St. Mary Parish–Iberia Parish All-Star selection (2004)
+- Member of Patterson's 2002 Louisiana Class 3A state runner-up team
+- School-record 99-yard touchdown reception in first varsity start
+
+SOURCE BASIS
+Archived newspaper game stories, box scores, cumulative statistical reports and postseason all-star teams from The Daily Review, The Daily Advertiser, American Press and The Banner-Tribune.
+
+Public profile: https://murphyskinner357-blip.github.io/Murphy-Skinner-Football/
+Source repository: https://github.com/murphyskinner357-blip/Murphy-Skinner-Football
+
+Important accuracy note: The 2002 season total is complete. The 2003 total is a minimum from recovered complete box scores, and the 2004 total is the latest located cumulative figure through Nov. 4, 2004. These should not be labeled final until the remaining records are recovered.

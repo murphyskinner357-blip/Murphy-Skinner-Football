@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://murphyskinner357-blip.github.io/Murphy-Skinner-Football/sitemap.xml
