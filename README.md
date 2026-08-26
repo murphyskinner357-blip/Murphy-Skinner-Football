@@ -11,6 +11,7 @@ Murphy Skinner played wide receiver and defensive back for Patterson High School
 - **2002 sophomore season — verified final:** 32 receptions, 595 receiving yards, 5 receiving touchdowns
 - **2003 junior season — recovered box-score minimum:** 10 receptions, 175 receiving yards, 1 receiving touchdown
 - **2004 senior season — latest located cumulative total through Nov. 4, 2004:** 35 receptions, 651 receiving yards, 9 receiving touchdowns
+- **Oct. 28, 2004 senior checkpoint:** 32 receptions, 587 receiving yards, 8 receiving touchdowns in the Louisiana statewide receiving-leaders list
 - **Documented career minimum:** 77 receptions, 1,421 receiving yards, 15 receiving touchdowns
 - **School-record touchdown reception:** 99½ yards vs. Central Catholic in 2002
 
@@ -21,6 +22,10 @@ Murphy Skinner played wide receiver and defensive back for Patterson High School
 - Second-Team Big School All-Acadiana wide receiver: 2002
 - Member of Patterson's 2002 Louisiana Class 3A state runner-up team
 - St. Mary Parish–Iberia Parish All-Star selection: 2004
+
+### Newly added 2004 source
+
+- [October 28, 2004 — Louisiana State Receiving Leaders](sources/2004-10-28-state-receiving-leaders.md): confirms **32 catches, 587 yards and 8 receiving touchdowns** by Oct. 28.
 
 ## Basketball archive
 
