@@ -81,7 +81,7 @@ def source_bball():
         )
     return "\n".join([*(row(g) for g in jr), *junior_honors_bball, *(row(g) for g in sr), senior_honor_bball])
 
-jr_section = f'''<section id="junior"><div class="wrap"><div class="eyebrow">2003–04 · Junior season · reconstruction in progress</div><h2>Junior honors & recovered scoring record</h2>
+jr_section = f'''<section id="junior"><div class="wrap"><div class="eyebrow">2003–04 · Junior season · No. 23 · reconstruction in progress</div><h2>Junior honors & recovered scoring record</h2>
 <div class="card"><h3>Verified junior honors</h3><ul><li><strong>Second-Team All-District 7-3A</strong></li><li><strong>All-Parish Honorable Mention</strong></li></ul><p>Patterson reached the Louisiana Class 3A playoffs.</p></div>
 <div class="grid">
   <div class="card"><div class="stat">200</div><strong>Points documented</strong><p class="small">Across 19 currently located junior-season game reports.</p></div>
@@ -94,7 +94,7 @@ jr_section = f'''<section id="junior"><div class="wrap"><div class="eyebrow">200
 <p class="notice"><strong>Status:</strong> The 2003–04 season is still being reconstructed. The 200 points shown here cover 19 located game reports and are not a claimed full-season point total. The 10.5 figure is only the average across those recovered games.</p>
 </div></section>'''
 
-sr_section = f'''<section id="senior"><div class="wrap"><div class="eyebrow">2004–05 · Senior season · reconstruction in progress</div><h2>Senior honors & recovered scoring record</h2>
+sr_section = f'''<section id="senior"><div class="wrap"><div class="eyebrow">2004–05 · Senior season · No. 23 · reconstruction in progress</div><h2>Senior honors & recovered scoring record</h2>
 <div class="card"><h3>Verified senior honors & team finish</h3><ul><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong> — selected by the district coaches.</li><li><strong>District 7-3A champion</strong></li><li><strong>Louisiana Class 3A state quarterfinalist</strong></li></ul></div>
 <div class="grid">
   <div class="card"><div class="stat">234–235</div><strong>Points documented</strong><p class="small">Across 16 currently located senior-season game reports; the range reflects one unresolved source conflict.</p></div>
@@ -107,8 +107,8 @@ sr_section = f'''<section id="senior"><div class="wrap"><div class="eyebrow">200
 <p class="notice"><strong>Status:</strong> The 2004–05 senior season is under reconstruction. The 234–235 points shown here cover 16 located game reports and are not a final season total. The one-point range preserves the unresolved Terrebonne source conflict: one newspaper reports 15 points and another reports 16.</p>
 </div></section>'''
 
-jr_card = '      <article class="card"><div class="eyebrow">2003–04 · Junior</div><h3>200 points across 19 currently located game reports</h3><p class="small">This is a recovered-game subtotal only, not a claimed full-season total. The recovered-game average is 10.5 points.</p><h4>Verified honors</h4><ul><li><strong>Second-Team All-District 7-3A</strong></li><li><strong>All-Parish Honorable Mention</strong></li></ul><p>Patterson reached the Louisiana Class 3A playoffs. The All-Parish honor is confirmed by two separate Daily Review articles.</p></article>'
-sr_card = '      <article class="card"><div class="eyebrow">2004–05 · Senior</div><h3>234–235 points across 16 currently located game reports</h3><p class="small">This is a recovered-game subtotal only. The one-point range reflects conflicting 15- and 16-point newspaper reports for the Terrebonne game.</p><h4>Verified honors</h4><ul><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong></li><li><strong>District 7-3A champion</strong></li></ul><p>Patterson advanced to the Louisiana Class 3A state quarterfinals.</p><h4>Verified postseason run</h4><ul><li>Patterson defeated Catholic–New Iberia 83–60; Skinner scored 14 points.</li><li>Patterson defeated Northwest 63–62; Skinner scored 10 points.</li><li>Patterson&#39;s season ended in a 73–63 quarterfinal loss to Marksville; Skinner scored 11 points.</li></ul></article>'
+jr_card = '      <article class="card"><div class="eyebrow">2003–04 · Junior · No. 23</div><h3>200 points across 19 currently located game reports</h3><p class="small">This is a recovered-game subtotal only, not a claimed full-season total. The recovered-game average is 10.5 points.</p><h4>Verified honors</h4><ul><li><strong>Second-Team All-District 7-3A</strong></li><li><strong>All-Parish Honorable Mention</strong></li></ul><p>Patterson reached the Louisiana Class 3A playoffs. The All-Parish honor is confirmed by two separate Daily Review articles.</p></article>'
+sr_card = '      <article class="card"><div class="eyebrow">2004–05 · Senior · No. 23</div><h3>234–235 points across 16 currently located game reports</h3><p class="small">This is a recovered-game subtotal only. The one-point range reflects conflicting 15- and 16-point newspaper reports for the Terrebonne game.</p><h4>Verified honors</h4><ul><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong></li><li><strong>District 7-3A champion</strong></li></ul><p>Patterson advanced to the Louisiana Class 3A state quarterfinals.</p><h4>Verified postseason run</h4><ul><li>Patterson defeated Catholic–New Iberia 83–60; Skinner scored 14 points.</li><li>Patterson defeated Northwest 63–62; Skinner scored 10 points.</li><li>Patterson&#39;s season ended in a 73–63 quarterfinal loss to Marksville; Skinner scored 11 points.</li></ul></article>'
 
 def sub1(pattern, replacement, text, label):
     out,n = re.subn(pattern,replacement,text,count=1,flags=re.S)
@@ -117,8 +117,8 @@ def sub1(pattern, replacement, text, label):
     return out
 
 p=Path("index.html"); s=p.read_text()
-s=sub1(r'      <article class="card"><div class="eyebrow">2003–04 · Junior</div>.*?</article>',jr_card,s,"index junior card")
-s=sub1(r'      <article class="card"><div class="eyebrow">2004–05 · Senior</div>.*?</article>',sr_card,s,"index senior card")
+s=sub1(r'      <article class="card"><div class="eyebrow">2003–04 · Junior · No. 23</div>.*?</article>',jr_card,s,"index junior card")
+s=sub1(r'      <article class="card"><div class="eyebrow">2004–05 · Senior · No. 23</div>.*?</article>',sr_card,s,"index senior card")
 s=sub1(r'(<h3>Verified basketball scoring games</h3>\s*<table><thead><tr><th>Season</th><th>Source / report date</th><th>Opponent</th><th>Result</th><th>Murphy Skinner</th><th>Notes</th></tr></thead><tbody>\n).*?(\n    </tbody></table>\n    <p class="notice"><strong>Basketball archive status:)',lambda m:m.group(1)+main_rows()+m.group(2),s,"index scoring table")
 s=sub1(r'(<tr><td>2005-11-13</td><td>Mission Football Conference</td>.*?</tr>\n).*?(\n    </tbody></table></div></section>\n\n    <section id="updates">)',lambda m:m.group(1)+source_main()+m.group(2),s,"index source register")
 s=s.replace("Version 5.4 · September 2, 2026","Version 5.5 · September 2, 2026",1)

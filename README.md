@@ -26,6 +26,8 @@ Murphy Skinner played wide receiver and defensive back for Patterson High School
 
 The basketball record is being reconstructed game by game from archived newspaper coverage. The totals below are **documented-game subtotals**, not claimed full-season totals or official season averages.
 
+**Basketball jersey:** No. 23
+
 ### 2003–04 junior season
 
 - **19 currently located game reports**
