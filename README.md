@@ -32,6 +32,7 @@ Murphy Skinner played wide receiver and defensive back for Patterson High School
 A separate basketball page is being reconstructed from archived newspaper coverage.
 
 - **December 2003 vs. New Iberia:** 21 points, team-high for Patterson in an 84–65 loss
+- **November 2003 vs. Terrebonne:** 7 points in a 70–59 loss; now confirmed by two located newspaper box scores
 
 ## Live pages
 
@@ -43,4 +44,4 @@ A separate basketball page is being reconstructed from archived newspaper covera
 
 The archive is built from historical newspaper game stories, box scores, cumulative statistical reports and postseason honors. Sources include The Daily Review, The Daily Advertiser, American Press and The Banner-Tribune. Additional records will be added as they are located and verified.
 
-_Last updated: August 26, 2026._
+_Last updated: September 2, 2026._
