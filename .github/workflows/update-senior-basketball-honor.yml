@@ -1,0 +1,78 @@
+name: Publish senior basketball honor
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-senior-basketball-honor.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add verified 2004-05 First-Team All-District honor
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          # Main athletic archive.
+          p = Path('index.html')
+          s = p.read_text()
+
+          replacements = [
+            (
+              '"award":["First-Team All-District 7-3A Football, 2002","First-Team All-District Football, 2003","First-Team All-District 7-3A Football, 2004","First-Team All-St. Mary Parish Football, 2002","First-Team All-St. Mary Parish Football, 2003","First-Team All-St. Mary Parish Football, 2004","Second-Team Big School All-Acadiana Football, 2002","2004 St. Mary Parish-Iberia Parish All-Star Football Game selection","Second-Team All-District 7-3A Basketball, 2003-04","All-Parish Honorable Mention Basketball, 2003-04"]',
+              '"award":["First-Team All-District 7-3A Football, 2002","First-Team All-District Football, 2003","First-Team All-District 7-3A Football, 2004","First-Team All-St. Mary Parish Football, 2002","First-Team All-St. Mary Parish Football, 2003","First-Team All-St. Mary Parish Football, 2004","Second-Team Big School All-Acadiana Football, 2002","2004 St. Mary Parish-Iberia Parish All-Star Football Game selection","Second-Team All-District 7-3A Basketball, 2003-04","All-Parish Honorable Mention Basketball, 2003-04","First-Team All-District 7-3A Basketball, 2004-05"]'
+            ),
+            (
+              '<div class="card"><div class="stat">2</div><strong>Verified Basketball Honors</strong><p class="small">Second-Team All-District 7-3A and All-Parish Honorable Mention, 2003–04</p></div>',
+              '<div class="card"><div class="stat">3</div><strong>Verified Basketball Honors</strong><p class="small">Second-Team All-District 7-3A and All-Parish Honorable Mention, 2003–04; First-Team All-District 7-3A, 2004–05</p></div>'
+            ),
+            (
+              '<article class="card"><div class="eyebrow">2004–05 · Senior</div><h3>187–188 points across 13 currently located game reports</h3><p class="small">This is a recovered-game subtotal only. The range reflects conflicting 15- and 16-point newspaper reports for the Terrebonne game.</p><h4>Verified postseason run</h4>',
+              '<article class="card"><div class="eyebrow">2004–05 · Senior</div><h3>187–188 points across 13 currently located game reports</h3><p class="small">This is a recovered-game subtotal only. The range reflects conflicting 15- and 16-point newspaper reports for the Terrebonne game.</p><h4>Verified honors</h4><ul><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong></li><li><strong>District 7-3A champion</strong></li></ul><p>Patterson advanced to the Louisiana Class 3A state quarterfinals.</p><h4>Verified postseason run</h4>'
+            ),
+            (
+              '<p class="notice"><strong>Basketball archive status:</strong> additional games, complete season totals and senior-year postseason honors are still being researched. Only figures supported by located newspaper coverage are shown here.</p>',
+              '<p class="notice"><strong>Basketball archive status:</strong> additional games and complete season totals are still being researched. Senior Murphy Skinner\'s First-Team All-District 7-3A honor is now verified by archived newspaper coverage. Only figures supported by located newspaper coverage are shown here.</p>'
+            ),
+            (
+              '<li><strong>All-Parish Honorable Mention basketball, 2003–04</strong></li><li>Continued his football career',
+              '<li><strong>All-Parish Honorable Mention basketball, 2003–04</strong></li><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A basketball, 2004–05</a></strong></li><li><strong>District 7-3A basketball champion, 2004–05</strong></li><li>Continued his football career'
+            )
+          ]
+
+          for old, new in replacements:
+              if old not in s:
+                  raise SystemExit(f'Expected index.html text not found: {old[:90]}')
+              s = s.replace(old, new, 1)
+
+          s = s.replace('Version 5.2 · September 2, 2026', 'Version 5.3 · September 2, 2026', 1)
+          p.write_text(s)
+
+          # Basketball-specific archive.
+          p = Path('basketball.html')
+          s = p.read_text()
+          old = '<section id="senior"><div class="wrap"><div class="eyebrow">2004–05 · Senior season · reconstruction in progress</div><h2>Recovered scoring record</h2>'
+          new = '<section id="senior"><div class="wrap"><div class="eyebrow">2004–05 · Senior season · reconstruction in progress</div><h2>Senior honors & recovered scoring record</h2><div class="card"><h3>Verified senior honor</h3><p><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong> — selected by the district coaches following the 2004–05 season.</p><p><strong>Team:</strong> District 7-3A champion and Louisiana Class 3A state quarterfinalist.</p></div>'
+          if old not in s:
+              raise SystemExit('Expected basketball.html senior heading not found')
+          s = s.replace(old, new, 1)
+
+          old = '"knowsAbout":["Basketball","High school basketball","Patterson Lumberjacks"]\n    }'
+          new = '"knowsAbout":["Basketball","High school basketball","Patterson Lumberjacks"],\n      "award":["First-Team All-District 7-3A Basketball, 2004-05","Second-Team All-District 7-3A Basketball, 2003-04","All-Parish Honorable Mention Basketball, 2003-04"]\n    }'
+          if old not in s:
+              raise SystemExit('Expected basketball.html schema block not found')
+          s = s.replace(old, new, 1)
+          p.write_text(s)
+          PY
+      - name: Commit site update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html basketball.html
+          git commit -m "Show verified 2004-05 First-Team All-District basketball honor"
+          git push
