@@ -24,7 +24,7 @@ def point_bounds(gs):
 jr = season_games("2003–04")
 sr = season_games("2004–05")
 assert len(jr) == 19 and point_bounds(jr) == (200,200)
-assert len(sr) == 15 and point_bounds(sr) == (221,222)
+assert len(sr) == 16 and point_bounds(sr) == (234,235)
 
 def main_rows():
     out=[]
@@ -97,18 +97,18 @@ jr_section = f'''<section id="junior"><div class="wrap"><div class="eyebrow">200
 sr_section = f'''<section id="senior"><div class="wrap"><div class="eyebrow">2004–05 · Senior season · reconstruction in progress</div><h2>Senior honors & recovered scoring record</h2>
 <div class="card"><h3>Verified senior honors & team finish</h3><ul><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong> — selected by the district coaches.</li><li><strong>District 7-3A champion</strong></li><li><strong>Louisiana Class 3A state quarterfinalist</strong></li></ul></div>
 <div class="grid">
-  <div class="card"><div class="stat">221–222</div><strong>Points documented</strong><p class="small">Across 15 currently located senior-season game reports; the range reflects one unresolved source conflict.</p></div>
+  <div class="card"><div class="stat">234–235</div><strong>Points documented</strong><p class="small">Across 16 currently located senior-season game reports; the range reflects one unresolved source conflict.</p></div>
   <div class="card"><div class="stat">27</div><strong>Recovered single-game high</strong><p class="small">Scored against Franklin in an 84–60 Patterson victory.</p></div>
   <div class="card"><div class="stat">1st Team</div><strong>All-District 7-3A</strong><p class="small">Verified senior postseason honor.</p></div>
 </div>
 <div class="card"><h3>Recovered 2004–05 game scoring</h3><table><thead><tr><th>Opponent</th><th>Points</th><th>Team result</th><th>Source / note</th></tr></thead><tbody>
 {bball_rows(sr)}
 </tbody></table></div>
-<p class="notice"><strong>Status:</strong> The 2004–05 senior season is under reconstruction. The 221–222 points shown here cover 15 located game reports and are not a final season total. The one-point range preserves the unresolved Terrebonne source conflict: one newspaper reports 15 points and another reports 16.</p>
+<p class="notice"><strong>Status:</strong> The 2004–05 senior season is under reconstruction. The 234–235 points shown here cover 16 located game reports and are not a final season total. The one-point range preserves the unresolved Terrebonne source conflict: one newspaper reports 15 points and another reports 16.</p>
 </div></section>'''
 
 jr_card = '      <article class="card"><div class="eyebrow">2003–04 · Junior</div><h3>200 points across 19 currently located game reports</h3><p class="small">This is a recovered-game subtotal only, not a claimed full-season total. The recovered-game average is 10.5 points.</p><h4>Verified honors</h4><ul><li><strong>Second-Team All-District 7-3A</strong></li><li><strong>All-Parish Honorable Mention</strong></li></ul><p>Patterson reached the Louisiana Class 3A playoffs. The All-Parish honor is confirmed by two separate Daily Review articles.</p></article>'
-sr_card = '      <article class="card"><div class="eyebrow">2004–05 · Senior</div><h3>221–222 points across 15 currently located game reports</h3><p class="small">This is a recovered-game subtotal only. The one-point range reflects conflicting 15- and 16-point newspaper reports for the Terrebonne game.</p><h4>Verified honors</h4><ul><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong></li><li><strong>District 7-3A champion</strong></li></ul><p>Patterson advanced to the Louisiana Class 3A state quarterfinals.</p><h4>Verified postseason run</h4><ul><li>Patterson defeated Catholic–New Iberia 83–60; Skinner scored 14 points.</li><li>Patterson defeated Northwest 63–62; Skinner scored 10 points.</li><li>Patterson&#39;s season ended in a 73–63 quarterfinal loss to Marksville; Skinner scored 11 points.</li></ul></article>'
+sr_card = '      <article class="card"><div class="eyebrow">2004–05 · Senior</div><h3>234–235 points across 16 currently located game reports</h3><p class="small">This is a recovered-game subtotal only. The one-point range reflects conflicting 15- and 16-point newspaper reports for the Terrebonne game.</p><h4>Verified honors</h4><ul><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong></li><li><strong>District 7-3A champion</strong></li></ul><p>Patterson advanced to the Louisiana Class 3A state quarterfinals.</p><h4>Verified postseason run</h4><ul><li>Patterson defeated Catholic–New Iberia 83–60; Skinner scored 14 points.</li><li>Patterson defeated Northwest 63–62; Skinner scored 10 points.</li><li>Patterson&#39;s season ended in a 73–63 quarterfinal loss to Marksville; Skinner scored 11 points.</li></ul></article>'
 
 def sub1(pattern, replacement, text, label):
     out,n = re.subn(pattern,replacement,text,count=1,flags=re.S)
@@ -131,4 +131,4 @@ s=sub1(r'(<section id="sources">.*?<tbody>\n).*?(\n</tbody></table></div>)',lamb
 s=re.sub(r'Version 2\.\d+','Version 3.0',s,count=1)
 p.write_text(s)
 
-print("Synced basketball archive: junior 19 games/200 points; senior 15 games/221–222 points.")
+print("Synced basketball archive: junior 19 games/200 points; senior 16 games/234–235 points.")

@@ -38,8 +38,8 @@ The basketball record is being reconstructed game by game from archived newspape
 
 ### 2004–05 senior season
 
-- **15 currently located game reports**
-- **221–222 documented points**
+- **16 currently located game reports**
+- **234–235 documented points**
 - The one-point range comes from the Terrebonne opener: *The Courier* reports 15 points while *The Daily Review* reports 16
 - **Recovered single-game high:** 27 points vs. Franklin
 - **First-Team All-District 7-3A**
