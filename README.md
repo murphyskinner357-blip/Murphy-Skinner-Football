@@ -36,6 +36,7 @@ A separate basketball page is being reconstructed from archived newspaper covera
 - **January 2004 vs. South Terrebonne:** 14 points in Patterson's 71–65 overtime win; confirmed by *The Daily Review* and *The Courier*
 - **February 2004 vs. Franklin:** 14 points in Patterson's 76–56 win, including two three-pointers during the decisive third-quarter run
 - **November 2004 vs. Terrebonne:** Patterson won 77–74 in overtime; *The Courier* reports 15 points while *The Daily Review* reports 16, so the archive preserves the source conflict
+- **January 2005 vs. Jeanerette:** 11 points in Patterson's 73–70 non-district win
 - **January 2005 vs. Hanson:** 21 points in Patterson's 76–60 win; confirmed by two located newspaper reports
 - **February 2005 vs. Catholic High–New Iberia:** 14 points in Patterson's 83–60 Class 3A first-round playoff win
 - **March 2005 vs. Marksville:** 11 points in Patterson's 73–63 Class 3A quarterfinal loss; Skinner opened Patterson's scoring with five straight points
