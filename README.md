@@ -34,6 +34,7 @@ A separate basketball page is being reconstructed from archived newspaper covera
 - **December 2003 vs. New Iberia:** 21 points, team-high for Patterson in an 84–65 loss
 - **November 2003 vs. Terrebonne:** 7 points in a 70–59 loss; now confirmed by two located newspaper box scores
 - **January 2004 vs. South Terrebonne:** 14 points in Patterson's 71–65 overtime win; confirmed by *The Daily Review* and *The Courier*
+- **January 2004 vs. Berwick:** game-high 18 points in Patterson's 92–31 victory
 - **February 2004 vs. Franklin:** 14 points in Patterson's 76–56 win, including two three-pointers during the decisive third-quarter run
 - **February 2004 vs. Morgan City:** 10 points in Patterson's 57–38 regular-season finale win, forcing a second-place district playoff
 - **November 2004 vs. Terrebonne:** Patterson won 77–74 in overtime; *The Courier* reports 15 points while *The Daily Review* reports 16, so the archive preserves the source conflict
