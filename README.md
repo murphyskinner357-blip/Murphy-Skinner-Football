@@ -1,18 +1,17 @@
 # Murphy Skinner — Patterson High School Sports Archive
 
-This repository preserves newspaper-sourced records from Murphy Skinner's Patterson High School athletic career in Patterson, Louisiana, Class of 2005.
+This repository preserves source-backed records from Murphy Skinner's Patterson High School athletic career in Patterson, Louisiana, Class of 2005, along with his 2005 freshman football season at Pasadena City College.
 
 ## Football career (2002–2004)
 
 Murphy Skinner played wide receiver and defensive back for Patterson High School and wore No. 26.
 
-### Verified and documented football production
+### Verified football production
 
 - **2002 sophomore season — verified final:** 32 receptions, 595 receiving yards, 5 receiving touchdowns
-- **2003 junior season — recovered box-score minimum:** 10 receptions, 175 receiving yards, 1 receiving touchdown
-- **2004 senior season — latest located cumulative total through Nov. 4, 2004:** 35 receptions, 651 receiving yards, 9 receiving touchdowns
-- **Oct. 28, 2004 senior checkpoint:** 32 receptions, 587 receiving yards, 8 receiving touchdowns in the Louisiana statewide receiving-leaders list
-- **Documented career minimum:** 77 receptions, 1,421 receiving yards, 15 receiving touchdowns
+- **2003 junior season — verified final:** 12 receptions, 187 receiving yards, 1 receiving touchdown
+- **2004 senior season — verified final:** 43 receptions, 783 receiving yards, 9 receiving touchdowns
+- **High school receiving career:** 87 receptions, 1,565 receiving yards, 15 receiving touchdowns
 - **School-record touchdown reception:** 99½ yards vs. Central Catholic in 2002
 
 ### Football honors
@@ -23,36 +22,55 @@ Murphy Skinner played wide receiver and defensive back for Patterson High School
 - Member of Patterson's 2002 Louisiana Class 3A state runner-up team
 - St. Mary Parish–Iberia Parish All-Star selection: 2004
 
-### Newly added 2004 source
-
-- [October 28, 2004 — Louisiana State Receiving Leaders](sources/2004-10-28-state-receiving-leaders.md): confirms **32 catches, 587 yards and 8 receiving touchdowns** by Oct. 28.
-
 ## Basketball archive
 
-A separate basketball page is being reconstructed from archived newspaper coverage.
+The basketball record is being reconstructed game by game from archived newspaper coverage. The totals below are **documented-game subtotals**, not claimed full-season totals or official season averages.
 
-- **December 2003 vs. New Iberia:** 21 points, team-high for Patterson in an 84–65 loss
-- **November 2003 vs. Terrebonne:** 7 points in a 70–59 loss; now confirmed by two located newspaper box scores
-- **January 2004 vs. South Terrebonne:** 14 points in Patterson's 71–65 overtime win; confirmed by *The Daily Review* and *The Courier*
-- **January 2004 vs. Berwick:** game-high 18 points in Patterson's 92–31 victory
-- **February 2004 vs. Franklin:** 14 points in Patterson's 76–56 win, including two three-pointers during the decisive third-quarter run
-- **February 2004 vs. Morgan City:** 10 points in Patterson's 57–38 regular-season finale win, forcing a second-place district playoff
-- **November 2004 vs. Terrebonne:** Patterson won 77–74 in overtime; *The Courier* reports 15 points while *The Daily Review* reports 16, so the archive preserves the source conflict
-- **January 2005 vs. Jeanerette:** 11 points in Patterson's 73–70 non-district win
-- **January 2005 vs. Hanson:** 21 points in Patterson's 76–60 win; confirmed by two located newspaper reports
-- **January 2005 vs. Franklin:** game-high 27 points in Patterson's 84–60 District 7-3A win
-- **February 2005 vs. Franklin:** 13 points, tied for Patterson's team high, in an 80–79 district win
-- **February 2005 vs. Catholic High–New Iberia:** 14 points in Patterson's 83–60 Class 3A first-round playoff win
-- **March 2005 vs. Marksville:** 11 points in Patterson's 73–63 Class 3A quarterfinal loss; Skinner opened Patterson's scoring with five straight points
+### 2003–04 junior season
+
+- **19 currently located game reports**
+- **200 documented points**
+- **10.5 points per recovered game** — not a full-season average
+- **Recovered single-game high:** 25 points vs. Assumption
+- **Second-Team All-District 7-3A**
+- **All-Parish Honorable Mention**
+- Patterson reached the Louisiana Class 3A playoffs
+
+### 2004–05 senior season
+
+- **15 currently located game reports**
+- **221–222 documented points**
+- The one-point range comes from the Terrebonne opener: *The Courier* reports 15 points while *The Daily Review* reports 16
+- **Recovered single-game high:** 27 points vs. Franklin
+- **First-Team All-District 7-3A**
+- **District 7-3A champion**
+- **Louisiana Class 3A state quarterfinalist**
+
+The senior All-District honor has its own source-backed page: [2004–05 First-Team All-District 7-3A](basketball-2004-05-all-district.html).
+
+The complete recovered game log is maintained in [murphy-skinner-basketball-stats.csv](murphy-skinner-basketball-stats.csv) and displayed on the basketball archive page.
+
+## Pasadena City College football — 2005
+
+The official Pasadena City College / Mission Football Conference records list Murphy Skinner as a freshman wide receiver, No. 84, at 6'0" and 207 pounds from Patterson, Louisiana.
+
+- 5 games
+- 4 receptions
+- 66 receiving yards
+- 16.5 yards per reception
+- Long reception: 42 yards
+- 3 kickoff returns for 24 yards
+- 90 all-purpose yards
 
 ## Live pages
 
-- Football archive: https://murphyskinner357-blip.github.io/Murphy-Skinner-Football/
+- Football and overall athletic archive: https://murphyskinner357-blip.github.io/Murphy-Skinner-Football/
 - Basketball archive: https://murphyskinner357-blip.github.io/Murphy-Skinner-Football/basketball.html
+- Senior All-District basketball record: https://murphyskinner357-blip.github.io/Murphy-Skinner-Football/basketball-2004-05-all-district.html
 - Sitemap: https://murphyskinner357-blip.github.io/Murphy-Skinner-Football/sitemap.xml
 
 ## Source basis
 
-The archive is built from historical newspaper game stories, box scores, cumulative statistical reports and postseason honors. Sources include The Daily Review, The Daily Advertiser, American Press and The Banner-Tribune. Additional records will be added as they are located and verified.
+The archive is built from historical newspaper game stories, box scores, cumulative statistical reports, postseason honors, official rosters and conference statistical records. Additional records will be added as they are located and verified.
 
 _Last updated: September 2, 2026._
