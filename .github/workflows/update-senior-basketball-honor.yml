@@ -1,4 +1,4 @@
-name: Publish senior basketball honor
+name: Publish basketball archive updates
 
 on:
   push:
@@ -13,66 +13,70 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Add verified 2004-05 First-Team All-District honor
+      - name: Add Feb. 2005 West St. Mary game
         run: |
           python - <<'PY'
           from pathlib import Path
 
-          # Main athletic archive.
+          # Main athletic archive
           p = Path('index.html')
           s = p.read_text()
+          s = s.replace('187–188 points across 13 currently located game reports', '207–208 points across 14 currently located game reports', 1)
 
-          replacements = [
-            (
-              '"award":["First-Team All-District 7-3A Football, 2002","First-Team All-District Football, 2003","First-Team All-District 7-3A Football, 2004","First-Team All-St. Mary Parish Football, 2002","First-Team All-St. Mary Parish Football, 2003","First-Team All-St. Mary Parish Football, 2004","Second-Team Big School All-Acadiana Football, 2002","2004 St. Mary Parish-Iberia Parish All-Star Football Game selection","Second-Team All-District 7-3A Basketball, 2003-04","All-Parish Honorable Mention Basketball, 2003-04"]',
-              '"award":["First-Team All-District 7-3A Football, 2002","First-Team All-District Football, 2003","First-Team All-District 7-3A Football, 2004","First-Team All-St. Mary Parish Football, 2002","First-Team All-St. Mary Parish Football, 2003","First-Team All-St. Mary Parish Football, 2004","Second-Team Big School All-Acadiana Football, 2002","2004 St. Mary Parish-Iberia Parish All-Star Football Game selection","Second-Team All-District 7-3A Basketball, 2003-04","All-Parish Honorable Mention Basketball, 2003-04","First-Team All-District 7-3A Basketball, 2004-05"]'
-            ),
-            (
-              '<div class="card"><div class="stat">2</div><strong>Verified Basketball Honors</strong><p class="small">Second-Team All-District 7-3A and All-Parish Honorable Mention, 2003–04</p></div>',
-              '<div class="card"><div class="stat">3</div><strong>Verified Basketball Honors</strong><p class="small">Second-Team All-District 7-3A and All-Parish Honorable Mention, 2003–04; First-Team All-District 7-3A, 2004–05</p></div>'
-            ),
-            (
-              '<article class="card"><div class="eyebrow">2004–05 · Senior</div><h3>187–188 points across 13 currently located game reports</h3><p class="small">This is a recovered-game subtotal only. The range reflects conflicting 15- and 16-point newspaper reports for the Terrebonne game.</p><h4>Verified postseason run</h4>',
-              '<article class="card"><div class="eyebrow">2004–05 · Senior</div><h3>187–188 points across 13 currently located game reports</h3><p class="small">This is a recovered-game subtotal only. The range reflects conflicting 15- and 16-point newspaper reports for the Terrebonne game.</p><h4>Verified honors</h4><ul><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong></li><li><strong>District 7-3A champion</strong></li></ul><p>Patterson advanced to the Louisiana Class 3A state quarterfinals.</p><h4>Verified postseason run</h4>'
-            ),
-            (
-              '<p class="notice"><strong>Basketball archive status:</strong> additional games, complete season totals and senior-year postseason honors are still being researched. Only figures supported by located newspaper coverage are shown here.</p>',
-              '<p class="notice"><strong>Basketball archive status:</strong> additional games and complete season totals are still being researched. Senior Murphy Skinner\'s First-Team All-District 7-3A honor is now verified by archived newspaper coverage. Only figures supported by located newspaper coverage are shown here.</p>'
-            ),
-            (
-              '<li><strong>All-Parish Honorable Mention basketball, 2003–04</strong></li><li>Continued his football career',
-              '<li><strong>All-Parish Honorable Mention basketball, 2003–04</strong></li><li><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A basketball, 2004–05</a></strong></li><li><strong>District 7-3A basketball champion, 2004–05</strong></li><li>Continued his football career'
-            )
-          ]
+          anchor = '<tr><td>2004–05</td><td>Feb. 8, 2005 source</td><td>Franklin</td><td>W, 80–79</td><td><strong>13 points</strong></td>'
+          newrow = '<tr><td>2004–05</td><td>Feb. 7, 2005</td><td>West St. Mary</td><td>W, 66–59</td><td><strong>20 points</strong></td><td>Skinner and Warrell Span scored 20 points apiece as Patterson moved into first place in District 7-3A. Skinner made two three-pointers. Patterson improved to 21–8 overall and 4–1 in district play.</td></tr>\n      '
+          if newrow not in s:
+              if anchor not in s:
+                  raise SystemExit('Main game-table anchor not found')
+              s = s.replace(anchor, newrow + anchor, 1)
 
-          for old, new in replacements:
-              if old not in s:
-                  raise SystemExit(f'Expected index.html text not found: {old[:90]}')
-              s = s.replace(old, new, 1)
+          source_anchor = '<tr><td>2005-02-08</td><td>The Daily Review</td><td>9</td><td>Patterson 80, Franklin 79</td>'
+          source_row = '<tr><td>2005-02-07</td><td>The Daily Review</td><td>—</td><td>\'Jacks take over first in 7-3A</td><td>Patterson defeated West St. Mary 66–59. Murphy Skinner and Warrell Span scored 20 points apiece; Skinner made two three-pointers. Patterson improved to 21–8 overall and 4–1 in District 7-3A and moved into first place.</td></tr>\n      '
+          if source_row not in s:
+              if source_anchor not in s:
+                  raise SystemExit('Main source-register anchor not found')
+              s = s.replace(source_anchor, source_row + source_anchor, 1)
 
-          s = s.replace('Version 5.2 · September 2, 2026', 'Version 5.3 · September 2, 2026', 1)
+          s = s.replace('Version 5.3 · September 2, 2026', 'Version 5.4 · September 2, 2026', 1)
           p.write_text(s)
 
-          # Basketball-specific archive.
+          # Basketball-specific archive
           p = Path('basketball.html')
           s = p.read_text()
-          old = '<section id="senior"><div class="wrap"><div class="eyebrow">2004–05 · Senior season · reconstruction in progress</div><h2>Recovered scoring record</h2>'
-          new = '<section id="senior"><div class="wrap"><div class="eyebrow">2004–05 · Senior season · reconstruction in progress</div><h2>Senior honors & recovered scoring record</h2><div class="card"><h3>Verified senior honor</h3><p><strong><a href="basketball-2004-05-all-district.html">First-Team All-District 7-3A</a></strong> — selected by the district coaches following the 2004–05 season.</p><p><strong>Team:</strong> District 7-3A champion and Louisiana Class 3A state quarterfinalist.</p></div>'
-          if old not in s:
-              raise SystemExit('Expected basketball.html senior heading not found')
-          s = s.replace(old, new, 1)
+          s = s.replace('<div class="card"><div class="stat">126–127</div><strong>Points documented</strong><p class="small">Across 8 recovered senior-season games; the range reflects a one-point source conflict.</p></div>', '<div class="card"><div class="stat">146–147</div><strong>Points documented</strong><p class="small">Across 9 recovered senior-season games; the range reflects a one-point source conflict.</p></div>', 1)
+          s = s.replace('The 126–127 points shown here cover eight recovered games', 'The 146–147 points shown here cover nine recovered games', 1)
 
-          old = '"knowsAbout":["Basketball","High school basketball","Patterson Lumberjacks"]\n    }'
-          new = '"knowsAbout":["Basketball","High school basketball","Patterson Lumberjacks"],\n      "award":["First-Team All-District 7-3A Basketball, 2004-05","Second-Team All-District 7-3A Basketball, 2003-04","All-Parish Honorable Mention Basketball, 2003-04"]\n    }'
-          if old not in s:
-              raise SystemExit('Expected basketball.html schema block not found')
-          s = s.replace(old, new, 1)
+          anchor = '<tr><td>Franklin</td><td><strong>13</strong></td><td>Patterson 80, Franklin 79</td>'
+          newrow = '<tr><td>West St. Mary</td><td><strong>20</strong></td><td>Patterson 66, West St. Mary 59</td><td><em>The Daily Review</em>, Feb. 7, 2005. Skinner and Warrell Span scored 20 points apiece as Patterson moved into first place in District 7-3A; Skinner made two three-pointers. Patterson improved to 21–8 overall and 4–1 in district play.</td></tr>\n'
+          if newrow not in s:
+              if anchor not in s:
+                  raise SystemExit('Basketball page game-table anchor not found')
+              s = s.replace(anchor, newrow + anchor, 1)
+
+          source_anchor = '<tr><td>2004-11-16</td><td>The Daily Review</td><td>9</td><td>Patterson 77, Terrebonne 74 (OT): reports Murphy Skinner scored 16 points.</td></tr>'
+          source_row = '<tr><td>2005-02-07</td><td>The Daily Review</td><td>—</td><td>Patterson 66, West St. Mary 59: Murphy Skinner and Warrell Span scored 20 points apiece. Skinner hit two three-pointers as Patterson moved into first place in District 7-3A at 21–8 overall and 4–1 in district.</td></tr>\n'
+          if source_row not in s:
+              if source_anchor not in s:
+                  raise SystemExit('Basketball source-register anchor not found')
+              s = s.replace(source_anchor, source_anchor + '\n' + source_row, 1)
+          p.write_text(s)
+
+          # Machine-readable basketball stats
+          p = Path('murphy-skinner-basketball-stats.csv')
+          s = p.read_text()
+          row = '2004-05,2005-02-04,West St. Mary,20,66,59,Win,"Skinner and Warrell Span scored 20 points apiece; Patterson moved into first place in District 7-3A at 21-8 overall and 4-1 in district","The Daily Review dated 2005-02-07 reports the Friday-night game; Skinner made two three-pointers; game date is inferred as 2005-02-04"\n'
+          if row not in s:
+              marker = '2004-05,,Franklin,13,80,79,Win,'
+              pos = s.find(marker)
+              if pos == -1:
+                  raise SystemExit('CSV insertion anchor not found')
+              s = s[:pos] + row + s[pos:]
           p.write_text(s)
           PY
       - name: Commit site update
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html basketball.html
-          git commit -m "Show verified 2004-05 First-Team All-District basketball honor"
+          git add index.html basketball.html murphy-skinner-basketball-stats.csv
+          git commit -m "Add 20-point West St. Mary game from Feb. 2005"
           git push
